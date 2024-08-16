@@ -71,9 +71,8 @@ function MobileNav() {
 
           <nav className="flex flex-col items-end h-full font-normal gap-4 pt-10">
             {navigationLinks.map(({ label, href }) => (
-              <DrawerClose asChild>
+              <DrawerClose asChild key={label}>
                 <Link
-                  key={label}
                   href={href}
                   className={`text-muted-foreground font-normal text-xl ${buttonVariants(
                     {
