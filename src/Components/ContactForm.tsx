@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-import { verifyReCaptcha, handleSubmit } from "@/actions";
+import { handleSubmit } from "@/actions";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -26,14 +26,13 @@ export default function ContactForm() {
     setLoading(true);
 
     const reCaptchaToken = await executeRecaptcha("contact_form");
-    const reCaptchaResponse = await verifyReCaptcha(reCaptchaToken);
 
-    if (!reCaptchaResponse.body.success) {
-      console.error("reCaptcha failed");
-      alert("reCaptcha failed");
-      setLoading(false);
-      return;
-    }
+    // if (!reCaptchaResponse.body.success) {
+    //   console.error("reCaptcha failed");
+    //   alert("reCaptcha failed");
+    //   setLoading(false);
+    //   return;
+    // }
 
     const formData = new FormData(event.currentTarget);
     const response = await handleSubmit(formData);
