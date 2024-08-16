@@ -3,8 +3,7 @@
 import { useState, useRef } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-import handleSubmit from "@/actions/handleSubmit";
-import verifyReCaptcha from "@/actions/verifyRecaptcha";
+import { verifyReCaptcha, handleSubmit } from "@/actions";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
